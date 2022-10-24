@@ -3,6 +3,7 @@ import { Rating } from "../rating/Rating";
 import "./popup.css";
 export const Popup = ({ id, isOpen, closeDetails }) => {
   const [product, setProduct] = useState(null);
+  const [mainImage, setMainImage] = useState(null);
 
   useEffect(() => {
     const fetchProduct = async (id) => {
@@ -14,6 +15,7 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
         const { product } = await response.json();
         console.log(product);
         setProduct(product);
+        setMainImage(product.thumbnail);
       } catch (err) {
         console.log(err);
       }
@@ -44,7 +46,7 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
             <i class='fas fa-times' />
           </button>
         </div>
-        <img src={thumbnail} alt='thumbnail'></img>
+        <img src={mainImage} alt='thumbnail'></img>
         <div className='popup-text-container'>
           <h2>{title}</h2>
           <h3>{category}</h3>
@@ -57,8 +59,13 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
             <span>Before {price}$</span>
           </p>
           <div className='popup-galery'>
-            {images.slice(1).map((image) => (
-              <img src={image} alt='galery' key={image} />
+            {images.map((image) => (
+              <div className='galery-image'>
+                <button onClick={() => setMainImage(image)}>
+                  <img src={image} alt='galery' key={image} />
+                </button>
+                <div className='galrey-layer'></div>
+              </div>
             ))}
           </div>
         </div>
