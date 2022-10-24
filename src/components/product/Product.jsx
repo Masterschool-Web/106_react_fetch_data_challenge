@@ -9,13 +9,14 @@ export const Product = ({ product, openDetails }) => {
       <img src={thumbnail} alt='product thumbnail' />
       <div className='text-container'>
         <h2>{title}</h2>
-        <p>
+        <p className='price'>
+          Price now :{" "}
           {((priceBeforeDiscount * (100 - discountPercentage)) / 100).toFixed(
             0
           )}
-          <span> {priceBeforeDiscount}</span>
+          $ |<span> Before {priceBeforeDiscount}$</span>
         </p>
-        <div>
+        <div className='button-container'>
           <button onClick={() => openDetails(id)}>Show More</button>
         </div>
       </div>

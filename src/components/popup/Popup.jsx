@@ -53,8 +53,8 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
           </p>
           <p>{description}</p>
           <p className='price'>
-            Price: {((price * (100 - discountPercentage)) / 100).toFixed(0)}$
-            <span>{price}$</span>
+            Price: {((price * (100 - discountPercentage)) / 100).toFixed(0)}$ |
+            <span>Before {price}$</span>
           </p>
           <div className='popup-galery'>
             {images.slice(1).map((image) => (
