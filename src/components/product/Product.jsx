@@ -10,11 +10,11 @@ export const Product = ({ product, openDetails }) => {
       <div className='text-container'>
         <h2>{title}</h2>
         <p className='price'>
-          Price now :{" "}
+          Price now : $
           {((priceBeforeDiscount * (100 - discountPercentage)) / 100).toFixed(
             0
-          )}
-          $ |<span> Before {priceBeforeDiscount}$</span>
+          )}{" "}
+          | <span>${priceBeforeDiscount}</span>
         </p>
         <div className='button-container'>
           <button onClick={() => openDetails(id)}>Show More</button>

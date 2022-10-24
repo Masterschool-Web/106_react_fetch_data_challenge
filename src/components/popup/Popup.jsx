@@ -5,6 +5,8 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(null);
 
+  // TODO: BONUS: the chosen pictures should have a gray layer on top to show it is "disabled" (as: "already chosen")
+
   useEffect(() => {
     const fetchProduct = async (id) => {
       try {
@@ -28,7 +30,6 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
 
   const {
     title,
-    thumbnail,
     description,
     category,
     price,
@@ -55,8 +56,8 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
           </p>
           <p>{description}</p>
           <p className='price'>
-            Price: {((price * (100 - discountPercentage)) / 100).toFixed(0)}$ |
-            <span>Before {price}$</span>
+            Price: ${((price * (100 - discountPercentage)) / 100).toFixed(0)} |
+            <span>$Before {price}</span>
           </p>
           <div className='popup-galery'>
             {images.map((image) => (

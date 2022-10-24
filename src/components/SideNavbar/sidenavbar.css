@@ -1,0 +1,31 @@
+.side-navbar {
+  grid-area: aside;
+  width: 100%;
+  min-height: 100%;
+  padding: 50px 20px 0 20px;
+  background-color: white;
+}
+
+.side-navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+}
+
+.side-navbar ul button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.side-navbar ul button:hover {
+  text-decoration: underline;
+}
+
+.side-navbar ul button:active {
+  color: blue;
+}

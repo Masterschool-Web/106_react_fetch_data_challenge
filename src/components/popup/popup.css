@@ -60,6 +60,8 @@
 .popup .popup-galery {
   display: flex;
   gap: 16px;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 .popup .popup-galery img {
