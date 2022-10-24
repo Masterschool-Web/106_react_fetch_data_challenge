@@ -14,6 +14,27 @@
   padding: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .side-navbar {
+    padding: 0;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .side-navbar ul {
+    padding: 0 20px;
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .side-navbar h2 {
+    display: none;
+  }
+}
+
 .side-navbar ul button {
   background-color: transparent;
   border: none;

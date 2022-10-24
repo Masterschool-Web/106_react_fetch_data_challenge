@@ -11,6 +11,16 @@ nav {
   z-index: 3;
 }
 
+@media only screen and (max-width: 600px) {
+  nav {
+    box-shadow: none;
+  }
+
+  nav h1 {
+    font-size: 85%;
+  }
+}
+
 .persona {
   display: flex;
   align-items: center;
