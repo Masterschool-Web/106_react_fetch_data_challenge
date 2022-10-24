@@ -1,8 +1,10 @@
 const express = require("express");
 const products = require("./data/products.json");
 const categories = require("./data/categories.json");
+var cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Server is running");

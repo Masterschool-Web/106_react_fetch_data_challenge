@@ -1,0 +1,10 @@
+.main {
+  grid-area: main;
+  overflow: scroll;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
