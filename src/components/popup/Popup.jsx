@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Rating } from "../rating/Rating";
 import "./popup.css";
 export const Popup = ({ id, isOpen, closeDetails }) => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(null);
 
-  // TODO: BONUS: the chosen pictures should have a gray layer on top to show it is "disabled" (as: "already chosen")
-
-  useEffect(() => {
-    const fetchProduct = async (id) => {
-      try {
-        const response = await fetch(
-          `${process.env.REACT_APP_API_BASE}/product/${id}`
-        );
-
-        const { product } = await response.json();
-        console.log(product);
-        setProduct(product);
-        setMainImage(product.thumbnail);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchProduct(id);
-  }, [id]);
+  // TODO: Fetch one product's full details
 
   if (!isOpen) return null;
   if (!product) return <div className='popup'>loading...</div>;
