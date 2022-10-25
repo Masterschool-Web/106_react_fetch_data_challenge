@@ -6,6 +6,8 @@ There is a list of todo's, but feel free to keep and improving this up beyond th
 
 ## Design
 
+<img width="1328" alt="design" src="https://user-images.githubusercontent.com/31222514/197737082-54e16c5c-7caf-493d-9aae-8f5d1394641f.png">
+
 ## Goal
 
 Basically, we need to add data fetching, so we can present the data received from the server.
