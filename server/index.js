@@ -12,7 +12,11 @@ app.get("/", (req, res) => {
 
 // GET all products
 app.get("/products", (req, res) => {
+  console.log("whatever");
+
   const { search, brand, max, min, rating } = req.query;
+
+  console.log(search);
 
   if (!search && !brand && !max && !min && !rating) {
     return res.status(200).send({
@@ -118,6 +122,8 @@ app.get("/product/:id", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log("server running on port", 4000);
+const PORT = 4000;
+
+app.listen(PORT, () => {
+  console.log("server running on port", PORT);
 });

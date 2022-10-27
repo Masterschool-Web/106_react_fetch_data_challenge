@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Rating } from "../rating/Rating";
 import "./popup.css";
 export const Popup = ({ id, isOpen, closeDetails }) => {
@@ -6,6 +6,26 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
   const [mainImage, setMainImage] = useState(null);
 
   // TODO: Fetch one product's full details
+
+  const fetchProduct = async (id) => {
+    try {
+      //fetch("http://localhost:4000/product/" + id);
+
+      console.log(id);
+      const response = await fetch(`http://localhost:4000/product/${id}`);
+      const data = await response.json();
+
+      setProduct(data.product);
+      // console.log(data.product);
+      // setMainImage(data.product.thumbnail);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchProduct(id);
+  }, [id]);
 
   if (!isOpen) return null;
   if (!product) return <div className='popup'>loading...</div>;
@@ -18,6 +38,7 @@ export const Popup = ({ id, isOpen, closeDetails }) => {
     discountPercentage,
     images,
     rating,
+    thumbnail,
   } = product;
 
   return (
